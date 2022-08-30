@@ -1,31 +1,16 @@
-sim
-========
+# sim
 
-Yet another stab at building a game that plays itself with AI.
+## Controller Support
 
-Bugs
-----
+Tested in Chrome and Firefox with the following controllers:
 
-* Toggles (e.g. turning AI on and off) don't get correctly saved/restored when
-  saving/restoring state.
-* HAHAHA should have written tests or something. Trajectory calculations are all
-  over the place. It works in practice with manual control because it's all
-  relative, but weird stuff happens when the snake starts chasing the ball.
+- Xbox 360 Wired Controller `©Microsoft Corporation Controller (STANDARD GAMEPAD Vendor: 045e Product: 028e)`
+- iBuffalo Classic USB Gamepad (looks like SNES) `USB,2-axis 8-button gamepad (STANDARD GAMEPAD Vendor: 0583 Product: 2060)`
 
-TODO
-----
+## License and Copyright
 
-1. It's time to address state performance. It's too expensive to copy native
-  JavaScript objects around.
-2. Add debug display as togglable filter like AI.
+Copyright (c) 2019 Justin Force
 
-Ideas
------
+Licensed under the [ISC License](http://www.opensource.org/licenses/ISC).
 
-* Make render resolution adjustable. Would it look cool with the same graphics
-  but much lower resolution? It might...
-
-License and Copyright
----------------------
-
-Copyright Justin Force. Licensed under the ISC License.
+<!-- spell-checker: ignore gamepad xbox abxy -->
