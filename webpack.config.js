@@ -1,11 +1,17 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: './app/entry.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
-    publicPath: 'build/',
+    publicPath: '/build/',
+  },
+  devServer: {
+    static: {
+      directory: __dirname,
+    },
   },
 
   devtool: 'source-map',
