@@ -5,27 +5,29 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build-production": "webpack -p",
+    "build-production": "webpack --mode production",
     "watch": "webpack --watch",
-    "serve": "webpack-dev-server --open"
+    "serve": "webpack serve --open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.9",
-    "eslint": "^4.17.0",
+    "@babel/core": "^7.29.0",
+    "@babel/plugin-transform-object-rest-spread": "^7.28.6",
+    "@babel/preset-env": "^7.29.5",
+    "acorn": "^8.16.0",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.4",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
-    "style-loader": "^0.20.1",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.107.1",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.4"
   },
   "dependencies": {
     "ramda": "^0.25.0"
