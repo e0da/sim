@@ -22,7 +22,7 @@ const initialState = () => ({
  */
 let state = initialState();
 
-const delta = previousState => mergeDeepRight(previousState, state);
+const delta = (previousState) => mergeDeepRight(previousState, state);
 
 const press = (callback, key) => {
   const handler = (event) => { if (event.key === key) callback(); };
@@ -50,7 +50,7 @@ const toggle = (input, keys) => {
 };
 
 const hold = (input, keys) => {
-  const toggler = flag => (event) => {
+  const toggler = (flag) => (event) => {
     const { key } = event;
     if (contains(key, keys.split(' '))) {
       set(input, flag);
@@ -61,7 +61,7 @@ const hold = (input, keys) => {
 };
 
 const clickHold = (input, box, canvas) => {
-  const toggler = flag => (event) => {
+  const toggler = (flag) => (event) => {
     if (event.touches) return;
     const point = [event.offsetX, event.offsetY];
     if (pointInsideBox(box, point)) {

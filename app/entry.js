@@ -1,4 +1,6 @@
-import { clamp, pipe, times, mergeDeepRight } from 'ramda';
+import {
+  clamp, pipe, times, mergeDeepRight,
+} from 'ramda';
 import './style.css';
 import * as Ball from './ball';
 import * as Drawing from './drawing';
@@ -14,7 +16,7 @@ const timeStep = 1000 / 60;
 // Cap ticks so the tab doesn't lock up after being forgotten in the background
 const maxTicks = Math.floor(timeStep);
 
-const delta = state => mergeDeepRight(state, { step: state.step + 1 });
+const delta = (state) => mergeDeepRight(state, { step: state.step + 1 });
 
 const tick = () => {
   const newState = pipe(

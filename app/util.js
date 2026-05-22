@@ -18,29 +18,29 @@ const debug = (...args) => {
 };
 
 // Returns a random item from list
-const pickRandom = list => list[Math.floor(Math.random() * list.length)];
+const pickRandom = (list) => list[Math.floor(Math.random() * list.length)];
 
 const addVectors = (a, b) => [a[0] + b[0], a[1] + b[1]];
 
-const polarToCartesian = vector => [
+const polarToCartesian = (vector) => [
   vector[0] * Math.cos(vector[1]),
   vector[0] * Math.sin(vector[1]),
 ];
 
-const cartesianToPolar = vector => [
+const cartesianToPolar = (vector) => [
   Math.hypot(vector[0], vector[1]),
   Math.atan2(vector[0], vector[1]),
 ];
 
-const scaleVector = (scalar, vector) => map(v => scalar * v, vector);
+const scaleVector = (scalar, vector) => map((v) => scalar * v, vector);
 
 const distance = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
-const collide = (aPosition, aSize, bPosition, bSize) =>
-  distance(aPosition, bPosition) <= (aSize + bSize);
+const collide = (aPosition, aSize, bPosition, bSize) => (
+  distance(aPosition, bPosition) <= (aSize + bSize)
+);
 
-const pointInsideBox = (box, point) =>
-  inRange(box[0][0], box[1][0], point[0]) &&
-  inRange(box[0][1], box[1][1], point[1]);
+const pointInsideBox = (box, point) => inRange(box[0][0], box[1][0], point[0])
+  && inRange(box[0][1], box[1][1], point[1]);
 
 const angleBetween = (a, b) => Math.atan2(b[1] - a[1], b[0] - a[0]);
 

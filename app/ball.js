@@ -9,8 +9,7 @@ const worldBoundary = (axis, world) => world.size[axis];
 
 const axisVelocity = (axis, state) => {
   const { ball, input, world } = state;
-  const edgeOfWorld =
-    outOfRange(0, worldBoundary(axis, world), ball.position[axis]);
+  const edgeOfWorld = outOfRange(0, worldBoundary(axis, world), ball.position[axis]);
   const left = axis === 0 && input.left && !input.right ? -1 : null;
   const right = axis === 0 && input.right && !input.left ? 1 : null;
   const currentDirection = Math.sign(ball.velocity[axis]);
@@ -19,7 +18,7 @@ const axisVelocity = (axis, state) => {
   return negateIf(edgeOfWorld, velocityVector);
 };
 
-const velocity = state => [
+const velocity = (state) => [
   axisVelocity(0, state),
   axisVelocity(1, state),
 ];
@@ -43,7 +42,7 @@ const initialState = () => ({
   speed: [xSpeed, ySpeed],
 });
 
-const delta = timeStep => (state) => {
+const delta = (timeStep) => (state) => {
   const vel = velocity(state);
   const pos = position(timeStep, state, vel);
   return mergeDeepRight(state, {
