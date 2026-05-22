@@ -6,12 +6,11 @@ const initialState = () => ({
   size,
 });
 
-const delta = state =>
-  mergeDeepRight(state, {
-    world: {
-      size,
-    },
-  });
+const delta = (state) => mergeDeepRight(state, {
+  world: {
+    size,
+  },
+});
 
 export {
   delta,

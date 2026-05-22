@@ -1,5 +1,7 @@
 import { clamp, mergeDeepRight } from 'ramda';
-import { addVectors, collide, polarToCartesian, scaleVector } from './util';
+import {
+  addVectors, collide, polarToCartesian, scaleVector,
+} from './util';
 
 const speed = 75;
 const turnRate = Math.PI / 32;
@@ -54,7 +56,7 @@ const nextLength = (state) => {
   return clamp(minLength, maxLength, (player.length + up + down + ate));
 };
 
-const delta = timeStep => (state) => {
+const delta = (timeStep) => (state) => {
   /* Use the new velocity as the input to position instead of the previous one
    * to achieve semi-implicit Euler integration which should help us converge to
    * accuracy. This helps: https://gafferongames.com/post/integration_basics/ */
